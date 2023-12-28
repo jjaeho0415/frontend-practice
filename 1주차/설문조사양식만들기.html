@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>설문조사 양식</title>
+</head>
+<body>
+    <header>
+        <h1>설문조사 양식</h1>
+        <p>모든 항목에 빠짐없이 체크해주십시오.</p>
+    </header>
+    <hr>
+    <main>
+        <form>
+            <fieldset>
+                <legend>개인정보</legend>
+                <label for="name">이름</label>
+                <input type="text" id="name" placeholder="본명을 입력하세요" name="name">
+                <br>
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="메일 주소 쓰세요" name="email">
+            </fieldset>
+            <fieldset>
+                <legend>설문</legend>
+                <p>어느 지역에 거주하고 계십니까?</p>
+                <input type="radio" id="seoul" name="location">
+                <label for="seoul">서울</label>
+                <input type="radio" id="geonggido" name="location">
+                <label for="geonggido">경기도</label>
+                <input type="radio" id="kangwondo" name="location">
+                <label for="kangwondo">강원도</label>
+                <input type="radio" id="geongsangdo" name="loction">
+                <label for="geongsangdo">경상도</label>
+                <input type="radio" id="jeollado" name="location">
+                <label for="jeollado">전라도</label>
+                <input type="radio" id="chungcheongdo" name="location">
+                <label for="chungcheongdo">충청도</label>
+
+                <p>대학교 선택 시 그 기준은 어떻게 되시나요?</p>
+                <input type="checkbox" id="position" name="university">
+                <label for="position">위치</label>
+                <input type="checkbox" id="price" name="university">
+                <label for="price">등록금</label>
+                <input type="checkbox" id="department" name="university">
+                <label for="department">학과</label>
+                <input type="checkbox" id="infra" name="university">
+                <label for="infra">시설</label>
+                <input type="checkbox" id="other" name="university">
+                <label for="other">기타</label>
+            </fieldset>
+            <fieldset>
+                <legend>기타 의견</legend>
+                <textarea rows="3" cols="30" name="comment"></textarea>
+            </fieldset>
+            <input type="submit">
+        </form>
+    </main>
+    <hr>
+    <footer>
+        <p>입력하느라 수고하셨습니다.</p>
+    </footer>
+</body>
+</html>
