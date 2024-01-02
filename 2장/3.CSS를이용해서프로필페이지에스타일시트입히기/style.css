@@ -1,0 +1,32 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-image: linear-gradient(to right, #9796f0, #fbc7d4);
+    font-size: 16px;
+}
+
+body{
+    width: 640px; 
+    margin: auto;
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 1px solid #9966FF;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+span{
+    font-weight: bold;
+}
