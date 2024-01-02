@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+main{
+    box-shadow: 10px 0 10px 10px yellowgreen;
+    margin: 0; 
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+header h2{
+    text-align: center;
+}
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 20px;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid darkseagreen;
+    background-color: white;
+}
+#phonenumber{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+#phonenumber input{
+    width: 30%;
+}
+.certification{
+    text-align: right;
+    margin: 10px;
+}
+#submit-certification{
+    margin: 15px auto;
+    padding: 10px;
+    border: 1px solid darkseagreen;
+    border-radius: 6px;
+
+}
+#location{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid darkseagreen;
+    background-color: white;
+}
+.gender{
+    text-align: center;
+}
+#submit{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid darkseagreen;
+    background-color: white;
+}
