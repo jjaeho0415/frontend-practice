@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    margin: 0;
+}
+.top{
+    width: 100%;
+    height: 350px;
+    background-color: rgba(255,255,255, 0.7);
+    position: relative;
+}
+.top-image{
+    width: 100%;
+    height: 350px;
+    background-image: url(./images/cute.png);
+    background-size: 33vw 300px;
+    opacity: 0.9;
+}
+.top-text{
+    font-size: 20px;
+    color: purple;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translateX(-50%);
+}
+
+.top-text::before{
+    content: "🎉";
+    animation: blink-effect 1s step-end infinite;
+}
+.top-text::after{
+    content: "🎉";
+    animation: blink-effect 1s step-end infinite;
+}
+@keyframes blink-effect{
+    60%{
+        opacity: 0.4;
+    }
+}
+
+.top-nav{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    display: block;
+    position: relative;
+}
+.top-nav-bar{
+    display: flex;
+    float: right;
+    margin: 0;
+    padding-left: 0;
+    height: 100%;
+}
+
+.top-nav-bar li{
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 0;
+    color: white;
+    padding: 30px;
+}
+
+#menubutton{
+    display: none;
+}
+.menubutton{
+    display: none;
+}
+
+.top-nav-bar li::after{
+    content:'';
+    margin-top: 50px;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.764);
+    display: none; 
+}
+
+.top-nav-bar a::after{
+    display: block;
+    margin-top: 22px;
+    content:'';
+    border-bottom: solid 7px purple;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+a:hover::after{
+    transform: scaleX(1);
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    float: left;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo{
+    display: block;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-weight: 700;
+    font-size: 50px;
+    width: 100px;
+}
+
+@media screen and (max-width: 768px){
+    
+    ul.top-nav-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .menubutton{
+        display: block;
+        visibility: visible;
+        float: right;
+        cursor: pointer;
+        transform: rotate(90deg);
+        padding: 25px;
+        width: fit-content;
+        height: fit-content;
+        color: white;
+        font-size: 25px;
+    }
+    
+    .top-nav-bar li{
+        visibility: hidden;
+    }
+
+    .menubutton:active{
+        background-color: greenyellow;
+    }
+
+    .menubutton:active ~ .top-nav-bar{
+        visibility: visible;
+    }
+    .menubutton:active ~ .top-nav-bar>li{
+        visibility: visible;
+        background-color: black;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        text-align: center;
+        
+    }
+    .menubutton:active ~ .top-nav-bar>li::after{
+        display: block;
+        visibility: visible;
+    }
+    .menubutton:active ~ a.menu{
+        float: center;
+    }
+    .mid-link-box{
+        flex-direction:column;
+        margin-left: 10%;
+        margin-right: 20%;
+    }
+    
+}
+.mid-text{
+    text-align: center;
+}
+p.first{
+    color: purple;
+    font-weight: bold;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    align-items: center;
+    position: relative;
+}
+
+p.second{
+    color: black;
+    font-weight: bold;
+    height: 80px;
+    font-size: 50px;
+    margin-bottom: 100px;
+    margin-top: 80px;
+}
+
+.mid-link-box{
+    padding: 0;
+    height: 400px;
+    display: flex;
+}
+.mid-link-list a{
+    width: inherit;
+    height: 400px;
+}
+.mid-link-box li{
+    list-style-type: none;
+    width: 400px;
+    height: inherit;
+    border: 1px solid rgb(240, 213, 137);
+    border-radius: 10px;
+    background-color: rgb(240, 213, 137);
+    filter: blur(4px);
+    margin: 50px;
+    margin-left: 80px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+img{
+    padding: 20px;
+    
+}
+.img1{
+    width: inherit;
+    height: 250px;
+}
+.img2{
+    width: inherit;
+    height: 250px;
+}
+.link-title{
+    color: black;
+    text-align: center;
+    font-size: 23px;
+}
+.link-text{
+    color: black;
+    text-align: center;
+    font-size: 15px;
+}
+.img3{
+    width: inherit;
+    height: 250px;
+}
+
+.mid-link-box li:hover{
+    filter: blur(0);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
