@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: 100vh;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(69, 202, 184);
+    overflow: hidden;
+}
+
+p{
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 1600px){
+    body{
+        background-color: red;
+    }
+    p.second::after{
+        content: "일반 PC";
+    }
+}
+@media screen and (max-width: 1366px){
+    body{
+        background-color: orange;
+    }
+    p.second::after{
+        content: "아이패드 Pro";
+    }
+}
+@media screen and (max-width: 1080px){
+    body{
+        background-color: yellow;
+        color: black;
+    }
+    p.second::after{
+        content: "아이폰 13 Mini";
+    }
+}
+@media screen and (max-width: 750px){
+    body{
+        background-color: green;
+        color: white;
+    }
+    p.second::after{
+        content: "아이폰 SE";
+    }
+}
