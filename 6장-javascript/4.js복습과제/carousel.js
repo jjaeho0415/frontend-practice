@@ -40,6 +40,4 @@ nextBtn.addEventListener('click', () => {
         index += 1
     }
     images.style.transform = `translate3d(-${300 * index}px, 0, 0)`;
-
 });
-
