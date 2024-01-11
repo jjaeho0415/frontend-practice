@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .images-wrap{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .images-wrap > .images{
+            display: flex;
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.2s;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="images-wrap">
+        <div class="images">
+            <img src="./images/smile.jpeg" alt="웃는 강아지 사진" class="smile">
+            <img src="./images/run.jpeg" alt="달려오는 강아지 사진" class="run">
+            <img src="./images/wink.jpeg" alt="윙크하는 강아지 사진" class="wink">
+        </div>
+    </div>
+    <button id="darkButton">⚫</button>
+    <button id="smile">화</button>
+    <button id="run">이</button>
+    <button id="wink">팅</button>
+    <button id="next">다음</button>
+    <script src="./carousel.js"></script>
+</body>
+</html>
