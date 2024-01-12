@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 트리 찍기</title>
+</head>
+
+<body>
+    <h1>별 트리 찍기</h1>
+    <script>
+        let maxtree = 5
+        document.write("1번 별<br>")
+        for(let i = 1; i <= maxtree; i ++){
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        
+        document.write("<br>2번 별<br>")
+        for(let i = 1; i <= maxtree; i ++){
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        for(let i = maxtree; i > 0; i --){
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+
+        document.write("<br>3번 별<br>")
+        for(let i = 1; i <= maxtree; i++){
+            for(let j = 1; j <= maxtree - i; j ++){
+                document.write("&nbsp;")
+            }
+            for(let k = 1; k <= 2 * i - 1; k ++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        for(let i = maxtree-1; i > 0; i --){
+            for(let j = maxtree; j > i; j --){
+                document.write("&nbsp;")
+            }
+            for(let k = 1; k <= 2 * i - 1; k ++){
+                document.write("*")
+            }
+            document.write("<br/>")
+        }
+        
+    </script>
+</body>
+</html>
