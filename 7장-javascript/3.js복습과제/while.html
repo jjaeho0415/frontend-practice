@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4의 배수 5개씩 출력하기</title>
+</head>
+<body>
+    <h2>4의 배수 5개씩 출력하기</h2>
+    <div id="container"></div>
+    <script>
+        const div = document.getElementById("container")
+        let count = 0
+        let result = 100
+        let str = ""
+        
+        while(result <= 504){
+            
+            str += `${result} `
+            result += 4
+            count += 1
+            
+            if(count === 4 || result === 504){
+                const p = document.createElement('p');
+                p.textContent = str
+                div.appendChild(p)
+                str = ""
+                count = 0
+            }
+            
+        }
+    </script>
+</body>
+</html>
