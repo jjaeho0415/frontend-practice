@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스테리 숫자 맞추기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+            background-color: rgb(30, 29, 29);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1.title{
+            margin: 50px auto;
+        }
+
+        p{
+            font-size: 1.2rem;
+        }
+
+        p.problem{
+            margin-bottom: 30px; 
+            font-weight: bold;
+        }
+
+        input{
+            width: 200px;
+            height: 45px;
+            margin-right: 20px;
+            padding: 0;
+            font-size: 23px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #button{
+            width: 120px;
+            height: 45px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            color: orange;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: rgb(30, 29, 29);
+            transition: all 0.5s;
+        }
+        #button:hover{
+            border-color: orange;
+            color: white;
+            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+            transform: translateY(-10px) scale(120%);
+        }
+        div#hint{
+            margin-top: 30px;
+            font-size: 1.2rem;
+        }
+        button#retry{
+            background-color: rgb(30, 29, 29);
+            margin-top: 20px;
+            border: 5px solid #0fe0f5;
+            color: #0fe0f5;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+            width: 120px;
+            height: 60px;
+            cursor: pointer;
+             
+        }
+        button#retry:hover{
+            background-color: #0fe0f5;
+            color: rgb(30, 29, 29);
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Mystery Number 맞추기</h1>
+        <p class="problem">1부터 100사이의 숫자를 입력하세요!</p>
+        <input type="text" id="input-number">
+        <button id="button">뚜둥!</button>
+        <div id="hint"></div>
+        <button id="retry">다시하기</button>
+    </div>
+    <script>
+        const input = document.getElementById('input-number');
+        const button = document.getElementById('button');
+        const div = document.getElementById('hint');
+        const retry = document.getElementById('retry');
+        let number = Math.floor(Math.random() * 100 + 1);
+
+        button.addEventListener('click', () => {
+            const p = document.createElement('p')
+            div.innerHTML = '';
+            if(input.value == number){
+                alert('👏👏👏 좀 치네? 정답!!')
+                p.style.display = 'none';
+                retry.style.display = 'inline-block';
+                retry.style.textAlign = 'center';
+            }
+            else if(input.value > number){
+                p.textContent = 'Hint : 숫자가 커요! 줄여볼까요?!';
+                div.append(p);
+            }
+            else{
+                p.textContent = 'Hint : 숫자가 너무 작아요! 조금 더 높여보세요!';
+                div.append(p);
+            }
+        });
+        
+        retry.addEventListener('click', () => {
+            retry.style.display = 'none';
+            input.value = '';
+            number = Math.floor(Math.random() * 100 + 1);
+            div.innerHTML = '';
+        });
+
+    </script>
+</body>
+</html>
