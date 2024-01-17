@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #display {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        #startButton, #stopButton {
+            font-size: 1em;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>⏰스톱워치⏰</h1>
+    <div id="display">경과 시간 : 0:0:0</div>
+    <button id="startButton">시작</button>
+    <button id="stopButton">중지</button>
+
+    <script>
+        let startTime;
+        let running = false;
+
+        const display = document.getElementById('display');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        startButton.addEventListener('click', start);
+        stopButton.addEventListener('click', stop);
+
+        function start() {
+            if (!running) {
+                startTime = Date.now();
+                running = true;
+                update();
+            }
+        }
+
+        function stop() {
+            running = false;
+        }
+
+        function update() {
+            if (running) {
+                const time = Date.now() - startTime;
+                const minutes = Math.floor(time / (1000 * 60));
+                const seconds = Math.floor((time % (1000 * 60)) / 1000);
+                const milliseconds = Math.floor((time % 1000) / 10);
+
+                display.textContent = formatTime(minutes, seconds, milliseconds);
+                requestAnimationFrame(update);
+            }
+        }
+
+        function formatTime(minutes, seconds, milliseconds) {
+            return (
+                padZero(minutes, 1) +
+                ':' +
+                padZero(seconds, 1) +
+                ':' +
+                padZero(milliseconds, 2)
+            );
+        }
+
+        function padZero(number, length) {
+            return String(number).padStart(length, '0');
+        }
+    </script>
+</body>
+</html>

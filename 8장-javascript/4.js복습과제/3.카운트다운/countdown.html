@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운</title>
+</head>
+<body>
+    <h2 id="current"></h2>
+    <h2 id="difference"></h2>
+    <script>
+        const difference = document.querySelector("#difference");
+        const current = document.querySelector("#current");
+        function differenceTime(){
+            const lastTime = new Date('2024-12-31T23:59:59.999Z')
+            const currentTime = new Date();
+            current.innerText = `현재 날짜와 시간 : ${currentTime} `;
+            const Difference = lastTime - currentTime;
+
+            const seconds = Math.floor((Difference / 1000) % 60);
+            const minutes = Math.floor((Difference / (1000 * 60)) % 60);
+            const hours = Math.floor((Difference / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(Difference / (1000 * 60 * 60 * 24));
+
+            difference.innerText = `올해의 남은 시간 : ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
+        }
+        differenceTime();
+        setInterval(differenceTime, 1000);
+        
+        
+    </script>
+</body>
+</html>
